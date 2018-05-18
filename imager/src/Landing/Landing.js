@@ -1,5 +1,5 @@
 import React from 'react'
-import AuthForm from './authform/authform'
+import AuthForm from './AuthForm/AuthForm'
 
 export default class Landing extends React.Component {
   render() {
