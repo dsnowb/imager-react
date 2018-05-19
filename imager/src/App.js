@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
-import Navbar from './navbar/navbar'
-import Landing from './landing/landing'
+import Navbar from './Navbar/Navbar'
+import Landing from './Landing/Landing'
 import { BrowserRouter, Route } from 'react-router-dom'
+import superagent from 'superagent'
 
 class App extends Component {
   constructor(props) {
@@ -19,14 +20,14 @@ class App extends Component {
     let { username, password } = credentials
     return superagent.post('http://localhost:8000/api/v1/login')
     .send({ username, password })
-    .then({res => this.setState({ token: res.body.token }))
-    .then(() => localStorage.setItem('token', JSON.stringify(this.state.token))
+    .then(res => this.setState({ token: res.body.token }))
+    .then(() => localStorage.setItem('token', JSON.stringify(this.state.token)))
     .catch(console.error)
   }
 
   signup(credentials) {
     let { username, password, email } = credentials
-    return superagent.post('http://localhjost:8000/api/v1/user')
+    return superagent.post('http://localhost:8000/api/v1/user')
     .send({ username, password, email })
     .then(() => window.location.pathname = '/welcome/signin')
     .catch(console.error)
