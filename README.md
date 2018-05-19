@@ -17,7 +17,7 @@ This app is written using JavaScript, React, HTML, CSS
 
 2. Install the requirements from package.json
 
-3. `npm run server` from installation directory. Server is running on localhost:3000
+3. `npm run start` from imager directory. Server is running on localhost:3000
 
 ## Change Log
 | 17 May 2018 | Initial deployment
